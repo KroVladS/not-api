@@ -26,8 +26,7 @@
 ## Технологии
 
 - [PostgreSQL](https://www.postgresql.org/) - надежная реляционная база данных
-- [Prisma ORM](https://www.prisma.io/) - современный ORM для Node.js и TypeScript
-- [TypeScript](https://www.typescriptlang.org/) - типизированный JavaScript
+- [Prisma ORM](https://www.prisma.io/) - современный ORM для Node.js
 - [Node.js](https://nodejs.org/) - серверная платформа для JavaScript
 
 ## Начало работы
@@ -76,7 +75,7 @@ MIT
 
 ## Автор
 
-Ваше имя
+KroVladS
 
 ---
 
