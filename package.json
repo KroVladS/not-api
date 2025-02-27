@@ -1,0 +1,31 @@
+{
+  "name": "not-api",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "An online backend service that provides a test REST API for testing and prototyping web applications. It allows developers to make HTTP requests and receive predefined data in JSON format, which simplifies the development and debugging process.",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon src/index.js",
+    "start": "NODE_ENV=production node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "not-api"
+  },
+  "author": "KroVladS",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.4.1",
+    "compression": "^1.8.0",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "winston": "^3.17.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "prisma": "^6.4.1"
+  }
+}
+  
