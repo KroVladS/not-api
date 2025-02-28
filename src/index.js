@@ -19,10 +19,10 @@ async function main() {
 
   app.use('/api/v1/users', usersController) // Подключаем контроллер пользователей к маршруту /api/v1/users
 
-  app.use('/error', (req, res) => {
-    // Обрабатываем GET-запросы на маршрут /error
-    throw new Error('Это тестовая ошибка') // Генерируем тестовую ошибку
-  })
+  // app.use('/error', (req, res) => {
+  //   // Обрабатываем GET-запросы на маршрут /error
+  //   throw new Error('Это тестовая ошибка') // Генерируем тестовую ошибку
+  // })
 
   app.all('*', (req, res) => {
     // Обрабатываем все остальные маршруты

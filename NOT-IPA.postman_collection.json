@@ -1,0 +1,346 @@
+{
+	"info": {
+		"_postman_id": "1a2b3c4d-5e6f-7890-abcd-ef1234567890",
+		"name": "NOT-IPA API",
+		"description": "Коллекция запросов для тестирования API пользователей",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Пользователи",
+			"item": [
+				{
+					"name": "Получить всех пользователей",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Получить список всех пользователей"
+					},
+					"response": []
+				},
+				{
+					"name": "Поиск пользователей",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users?search=Leanne",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Leanne"
+								}
+							]
+						},
+						"description": "Поиск пользователей по имени, email или username"
+					},
+					"response": []
+				},
+				{
+					"name": "Получить пользователя по ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						},
+						"description": "Получить данные пользователя по его ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Получить пользователя по имени пользователя",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users/username/Bret",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"username",
+								"Bret"
+							]
+						},
+						"description": "Получить данные пользователя по его имени пользователя"
+					},
+					"response": []
+				},
+				{
+					"name": "Создать пользователя",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"username\": \"johndoe\",\n  \"email\": \"john@example.com\",\n  \"phone\": \"1-770-736-8031 x56442\",\n  \"website\": \"hildegard.org\",\n  \"address\": {\n    \"street\": \"Kulas Light\",\n    \"suite\": \"Apt. 556\",\n    \"city\": \"Gwenborough\",\n    \"zipcode\": \"92998-3874\",\n    \"geo\": {\n      \"lat\": \"-37.3159\",\n      \"lng\": \"81.1496\"\n    }\n  },\n  \"company\": {\n    \"name\": \"Romaguera-Crona\",\n    \"catchPhrase\": \"Multi-layered client-server neural-net\",\n    \"bs\": \"harness real-time e-markets\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Создать нового пользователя со всеми данными"
+					},
+					"response": []
+				},
+				{
+					"name": "Создать пользователя (минимальные данные)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Jane Smith\",\n  \"username\": \"janesmith\",\n  \"email\": \"jane@example.com\",\n  \"phone\": \"1-123-456-7890\",\n  \"website\": \"janesmith.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Создать нового пользователя с минимальным набором данных"
+					},
+					"response": []
+				},
+				{
+					"name": "Массовое создание пользователей",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"name\": \"Bob Johnson\",\n    \"username\": \"bjohnson\",\n    \"email\": \"bob@example.com\",\n    \"phone\": \"1-555-123-4567\",\n    \"website\": \"bobjohnson.com\"\n  },\n  {\n    \"name\": \"Alice Brown\",\n    \"username\": \"abrown\",\n    \"email\": \"alice@example.com\",\n    \"phone\": \"1-555-987-6543\",\n    \"website\": \"alicebrown.com\"\n  }\n]"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/bulk",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"bulk"
+							]
+						},
+						"description": "Создать несколько пользователей за один запрос"
+					},
+					"response": []
+				},
+				{
+					"name": "Обновить пользователя (PUT)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Smith\",\n  \"username\": \"johnsmith\",\n  \"email\": \"john.smith@example.com\",\n  \"phone\": \"1-770-736-8031 x56442\",\n  \"website\": \"johnsmith.org\",\n  \"address\": {\n    \"street\": \"Updated Street\",\n    \"suite\": \"Apt. 789\",\n    \"city\": \"New City\",\n    \"zipcode\": \"12345-6789\",\n    \"geo\": {\n      \"lat\": \"-40.1234\",\n      \"lng\": \"80.5678\"\n    }\n  },\n  \"company\": {\n    \"name\": \"Updated Company\",\n    \"catchPhrase\": \"New catchphrase\",\n    \"bs\": \"updated business strategy\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						},
+						"description": "Полное обновление данных пользователя"
+					},
+					"response": []
+				},
+				{
+					"name": "Частичное обновление пользователя (PATCH)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"updated.email@example.com\",\n  \"address\": {\n    \"city\": \"Updated City\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						},
+						"description": "Частичное обновление данных пользователя"
+					},
+					"response": []
+				},
+				{
+					"name": "Удалить пользователя",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						},
+						"description": "Удалить пользователя по ID"
+					},
+					"response": []
+				}
+			],
+			"description": "Операции с пользователями: создание, получение, обновление, удаление"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "your_jwt_token_here",
+			"type": "string"
+		}
+	]
+} 
